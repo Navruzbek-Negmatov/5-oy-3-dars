@@ -1,0 +1,15 @@
+<% if (!hideHeader) { %>
+  <nav>
+    <a href="/products">Bosh sahifa</a>
+    <a href="/cart">
+      Savatcha (<span class="cart-count"<% if (!cartCount) { %> style="display:none;"<% } %>><%= cartCount || 0 %></span>)
+    </a>
+    <% if (typeof user !== 'undefined') { %>
+      <a href="/logout">Chiqish</a>
+    <% } else { %>
+      <a href="/login">Kirish</a>
+      <a href="/register">Ro'yxatdan o'tish</a>
+    <% } %>
+  </nav>
+  <hr>
+<% } %>

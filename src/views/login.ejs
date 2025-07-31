@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/css/styles.css">
+<div class="login-form">
+    <h2>Login</h2>
+    <% if (typeof error !== 'undefined' && error) { %>
+        <p style="color: red;"><%= error %></p>
+    <% } %>
+    <form method="POST" action="/login" onsubmit="return true;" id="loginForm">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    <a href="/register">Ro'yxatdan o'tish</a>
+    <script>
+        document.getElementById('loginForm').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                this.querySelector('button[type="submit"]').click();
+            }
+        });
+    </script>
+</div>
